@@ -22,7 +22,7 @@ pub enum Day {
     Twenty,
     Twentyone,
     Twentytwo,
-    Twentythree,    
+    Twentythree,
     Twentyfour,
     Twentyfive,
 }
@@ -32,4 +32,3 @@ pub enum SubDay {
     One,
     Two,
 }
-

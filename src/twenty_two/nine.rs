@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-use crate::class::{AdventOfCode, Day};
+use crate::{AdventOfCode, Day};
 
 pub struct Nine;
 

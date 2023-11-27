@@ -1,4 +1,4 @@
-use crate::class::{AdventOfCode, Day};
+use crate::{AdventOfCode, Day};
 
 pub struct Four;
 
