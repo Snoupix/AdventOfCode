@@ -8,32 +8,12 @@ mod twenty_two;
 
 use std::{fs::File, io::Read, vec};
 
+use crate::twenty_three::*;
+
 use clap::Parser;
 
-macro_rules! use_year {
-    ($year:ident) => {
-        use crate::$year::*;
-
-        println!(
-            "{}",
-            match stringify!($year) {
-                "twenty_two" => "Using year 2022",
-                "twenty_three" => "Using year 2023",
-                _ => "Using unrecognized year",
-            }
-        );
-    };
-}
-
-// https://docs.rs/quote/0.6.13/quote/macro.quote.html#constructing-identifiers
-// macro_rules! nb_to_ident {
-//     ($nb:expr) => {
-//         m
-//     };
-// }
-
 #[derive(Debug, Parser)]
-struct Args {
+pub struct Args {
     #[clap(short, long)]
     day: u32,
 
@@ -51,9 +31,21 @@ pub struct AdventOfCode {
 }
 
 pub trait Day {
-    fn one(testing: bool) -> String;
+    fn one(testing: bool) -> String {
+        unimplemented!()
+    }
 
-    fn two(testing: bool) -> String;
+    fn two(testing: bool) -> String {
+        unimplemented!()
+    }
+
+    fn parse_file<T>(content: String) -> Vec<T>
+    where
+        T: std::str::FromStr + std::fmt::Debug,
+        <T as std::str::FromStr>::Err: std::fmt::Debug,
+    {
+        unimplemented!()
+    }
 }
 
 #[derive(Debug)]
@@ -61,8 +53,6 @@ enum AOCArgError {
     Day,
     Sub,
 }
-
-use_year!(twenty_two);
 
 fn main() {
     AdventOfCode::new(Args::parse()).run();
@@ -151,79 +141,80 @@ impl AdventOfCode {
                         enums::SubDay::Two => One::two(self.testing),
                     }
                 }
-                enums::Day::Two => {
-                    match self.current_sub_day {
-                        enums::SubDay::One => Two::one(self.testing),
-                        enums::SubDay::Two => Two::two(self.testing),
-                    }
-                }
-                enums::Day::Three => {
-                    match self.current_sub_day {
-                        enums::SubDay::One => Three::one(self.testing),
-                        enums::SubDay::Two => Three::two(self.testing),
-                    }
-                }
-                enums::Day::Four => {
-                    match self.current_sub_day {
-                        enums::SubDay::One => Four::one(self.testing),
-                        enums::SubDay::Two => Four::two(self.testing),
-                    }
-                }
-                enums::Day::Five => {
-                    match self.current_sub_day {
-                        enums::SubDay::One => Five::one(self.testing),
-                        enums::SubDay::Two => Five::two(self.testing),
-                    }
-                }
-                enums::Day::Six => {
-                    match self.current_sub_day {
-                        enums::SubDay::One => Six::one(self.testing),
-                        enums::SubDay::Two => Six::two(self.testing),
-                    }
-                }
-                enums::Day::Seven => {
-                    match self.current_sub_day {
-                        enums::SubDay::One => Seven::one(self.testing),
-                        enums::SubDay::Two => Seven::two(self.testing),
-                    }
-                }
-                enums::Day::Eight => {
-                    match self.current_sub_day {
-                        enums::SubDay::One => Eight::one(self.testing),
-                        enums::SubDay::Two => Eight::two(self.testing),
-                    }
-                }
-                enums::Day::Nine => {
-                    match self.current_sub_day {
-                        enums::SubDay::One => Nine::one(self.testing),
-                        enums::SubDay::Two => Nine::two(self.testing),
-                    }
-                }
-                enums::Day::Ten => {
-                    match self.current_sub_day {
-                        enums::SubDay::One => Ten::one(self.testing),
-                        enums::SubDay::Two => Ten::two(self.testing),
-                    }
-                }
-                enums::Day::Eleven => {
-                    match self.current_sub_day {
-                        enums::SubDay::One => Eleven::one(self.testing),
-                        enums::SubDay::Two => Eleven::two(self.testing),
-                    }
-                }
-                enums::Day::Twelve => {
-                    match self.current_sub_day {
-                        enums::SubDay::One => Twelve::one(self.testing),
-                        enums::SubDay::Two => Twelve::two(self.testing),
-                    }
-                }
+                // enums::Day::Two => {
+                //     match self.current_sub_day {
+                //         enums::SubDay::One => Two::one(self.testing),
+                //         enums::SubDay::Two => Two::two(self.testing),
+                //     }
+                // }
+                // enums::Day::Three => {
+                //     match self.current_sub_day {
+                //         enums::SubDay::One => Three::one(self.testing),
+                //         enums::SubDay::Two => Three::two(self.testing),
+                //     }
+                // }
+                // enums::Day::Four => {
+                //     match self.current_sub_day {
+                //         enums::SubDay::One => Four::one(self.testing),
+                //         enums::SubDay::Two => Four::two(self.testing),
+                //     }
+                // }
+                // enums::Day::Five => {
+                //     match self.current_sub_day {
+                //         enums::SubDay::One => Five::one(self.testing),
+                //         enums::SubDay::Two => Five::two(self.testing),
+                //     }
+                // }
+                // enums::Day::Six => {
+                //     match self.current_sub_day {
+                //         enums::SubDay::One => Six::one(self.testing),
+                //         enums::SubDay::Two => Six::two(self.testing),
+                //     }
+                // }
+                // enums::Day::Seven => {
+                //     match self.current_sub_day {
+                //         enums::SubDay::One => Seven::one(self.testing),
+                //         enums::SubDay::Two => Seven::two(self.testing),
+                //     }
+                // }
+                // enums::Day::Eight => {
+                //     match self.current_sub_day {
+                //         enums::SubDay::One => Eight::one(self.testing),
+                //         enums::SubDay::Two => Eight::two(self.testing),
+                //     }
+                // }
+                // enums::Day::Nine => {
+                //     match self.current_sub_day {
+                //         enums::SubDay::One => Nine::one(self.testing),
+                //         enums::SubDay::Two => Nine::two(self.testing),
+                //     }
+                // }
+                // enums::Day::Ten => {
+                //     match self.current_sub_day {
+                //         enums::SubDay::One => Ten::one(self.testing),
+                //         enums::SubDay::Two => Ten::two(self.testing),
+                //     }
+                // }
+                // enums::Day::Eleven => {
+                //     match self.current_sub_day {
+                //         enums::SubDay::One => Eleven::one(self.testing),
+                //         enums::SubDay::Two => Eleven::two(self.testing),
+                //     }
+                // }
+                // enums::Day::Twelve => {
+                //     match self.current_sub_day {
+                //         enums::SubDay::One => Twelve::one(self.testing),
+                //         enums::SubDay::Two => Twelve::two(self.testing),
+                //     }
+                // }
                 _ => String::from(""),
             }
         );
     }
 
     fn get_file_path(testing: bool, day: &str) -> String {
-        let mut absolute_path = String::from("D:/Documents/taff/adventofcode/src/input/");
+        let mut absolute_path =
+            String::from(concat!(env!("CARGO_MANIFEST_DIR"), "/src/input/", "2023/"));
 
         if testing {
             absolute_path.push_str("example.txt");
