@@ -60,34 +60,14 @@ impl Day for One {
             let mut _v = Vec::new();
             for (i, c) in s.chars().enumerate() {
                 if c.is_ascii_digit() {
-                    let mut j = i;
-                    let mut chars = s[i..].chars();
-                    for _c in chars {
-                        if !_c.is_ascii_digit() {
-                            break;
-                        }
-
-                        j += 1;
-                    }
-
-                    s[i..j]
-                        .chars()
-                        .for_each(|_c| _v.push(_c.to_string().parse::<u32>().unwrap()));
+                    _v.push(c.to_string().parse::<u32>().unwrap());
                     continue;
                 }
 
                 for _chars in &nbrs {
-                    let mut j = i;
-                    for (_i, _c) in _chars.clone().enumerate() {
-                        if i + _i >= s.len() || s.chars().collect::<Vec<char>>()[_i + i] != _c {
-                            break;
-                        }
-
-                        j += 1;
-                    }
-
-                    if j - i > 1 {
-                        _v.push(match &s[i..j] {
+                    let string = _chars.clone().collect::<String>();
+                    if s[i..].starts_with(&string) {
+                        _v.push(match string.as_str() {
                             "one" => 1,
                             "two" => 2,
                             "three" => 3,
@@ -99,8 +79,6 @@ impl Day for One {
                             "nine" => 9,
                             _ => 0,
                         });
-
-                        _v.retain(|x| *x != 0);
                     }
                 }
             }
