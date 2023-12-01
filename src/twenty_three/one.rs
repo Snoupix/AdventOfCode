@@ -79,6 +79,8 @@ impl Day for One {
                             "nine" => 9,
                             _ => 0,
                         });
+
+                        _v.retain(|x| *x != 0);
                     }
                 }
             }
