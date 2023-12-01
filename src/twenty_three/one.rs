@@ -60,7 +60,7 @@ impl Day for One {
             let mut _v = Vec::new();
             for (i, c) in s.chars().enumerate() {
                 if c.is_ascii_digit() {
-                    _v.push(c.to_string().parse::<u32>().unwrap());
+                    _v.push(c as u32 - '0' as u32);
                     continue;
                 }
 
