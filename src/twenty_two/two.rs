@@ -22,8 +22,7 @@ pub struct Two;
 impl Day for Two {
     fn one(testing: bool) -> String {
         let mut result: u32 = 0;
-        let mut content = String::new();
-        AdventOfCode::read_file_to_string(&mut content, testing, "two");
+        let mut content = AdventOfCode::read_file_to_string(testing, "two");
         let games = compute_file(content);
 
         for g in games {
@@ -35,8 +34,7 @@ impl Day for Two {
 
     fn two(testing: bool) -> String {
         let mut result: u32 = 0;
-        let mut content = String::new();
-        AdventOfCode::read_file_to_string(&mut content, testing, "two");
+        let mut content = AdventOfCode::read_file_to_string(testing, "two");
         let games = compute_file(content);
 
         for g in games {

@@ -7,8 +7,7 @@ pub struct Five;
 impl Day for Five {
     fn one(testing: bool) -> String {
         let mut result: String = String::new();
-        let mut contents = String::new();
-        AdventOfCode::read_file_to_string(&mut contents, testing, "five");
+        let mut contents = AdventOfCode::read_file_to_string(testing, "five");
         let mut actions = compute_file(contents); // move [0] from [1] to [2]
                                                   /* let mut state: HashMap<u16, Vec<&str>> = HashMap::from([
                                                       (1, Vec::from(["Z", "N"])),
@@ -56,8 +55,7 @@ impl Day for Five {
 
     fn two(testing: bool) -> String {
         let mut result: String = String::new();
-        let mut contents = String::new();
-        AdventOfCode::read_file_to_string(&mut contents, testing, "five");
+        let mut contents = AdventOfCode::read_file_to_string(testing, "five");
         let mut actions = compute_file(contents); // move [0] from [1] to [2]
         let mut state: HashMap<u16, Vec<&str>> = HashMap::from([
             (1, Vec::from(["L", "N", "W", "T", "D"])),

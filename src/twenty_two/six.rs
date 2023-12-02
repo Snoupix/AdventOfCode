@@ -5,8 +5,7 @@ pub struct Six;
 impl Day for Six {
     fn one(testing: bool) -> String {
         let mut result: usize = 0;
-        let mut content = String::new();
-        AdventOfCode::read_file_to_string(&mut content, testing, "six");
+        let mut content = AdventOfCode::read_file_to_string(testing, "six");
 
         for (i, &s) in content.as_bytes().iter().enumerate() {
             let mut chars = Vec::new();
@@ -26,8 +25,7 @@ impl Day for Six {
 
     fn two(testing: bool) -> String {
         let mut result: usize = 0;
-        let mut content = String::new();
-        AdventOfCode::read_file_to_string(&mut content, testing, "six");
+        let mut content = AdventOfCode::read_file_to_string(testing, "six");
 
         for (i, &s) in content.as_bytes().iter().enumerate() {
             let mut chars = Vec::new();

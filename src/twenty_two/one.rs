@@ -5,8 +5,7 @@ pub struct One;
 impl Day for One {
     fn one(testing: bool) -> String {
         let mut result: u32 = 0;
-        let mut content = String::new();
-        AdventOfCode::read_file_to_string(&mut content, testing, "one");
+        let mut content = AdventOfCode::read_file_to_string(testing, "one");
         let vector = compute_file(content);
 
         for vec in vector.iter() {
@@ -26,8 +25,7 @@ impl Day for One {
 
     fn two(testing: bool) -> String {
         let mut results: Vec<u32> = Vec::new();
-        let mut content = String::new();
-        AdventOfCode::read_file_to_string(&mut content, testing, "one");
+        let mut content = AdventOfCode::read_file_to_string(testing, "one");
         let vector = compute_file(content);
 
         for vec in vector.iter() {

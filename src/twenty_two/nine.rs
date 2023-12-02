@@ -20,8 +20,7 @@ impl Eq for Pos<usize> {}
 
 impl Day for Nine {
     fn one(testing: bool) -> String {
-        let mut content = String::new();
-        AdventOfCode::read_file_to_string(&mut content, testing, "nine");
+        let mut content = AdventOfCode::read_file_to_string(testing, "nine");
         let movements = compute_file(content);
         let mut map: Vec<Vec<i32>> = create_map(20, 20);
         let mut visited_idxs: HashMap<Pos<usize>, bool> = HashMap::new();
@@ -118,8 +117,7 @@ impl Day for Nine {
     // 6265 < r
 
     fn two(testing: bool) -> String {
-        let mut content = String::new();
-        AdventOfCode::read_file_to_string(&mut content, testing, "nine");
+        let mut content = AdventOfCode::read_file_to_string(testing, "nine");
         let games = compute_file(content);
 
         String::from("")

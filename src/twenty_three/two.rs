@@ -14,11 +14,9 @@ impl Day for Two {
         let re_green: Regex = Regex::new(r"[0-9]+ green").unwrap();
         let re_blue: Regex = Regex::new(r"[0-9]+ blue").unwrap();
 
-        let mut content = String::new();
-        AdventOfCode::read_file_to_string(&mut content, testing, "two");
-        let mut v = Vec::new();
+        let content = AdventOfCode::read_file_to_string(testing, "two");
+        let v: Vec<&str> = content.lines().collect();
         let mut r = Vec::new();
-        content.lines().for_each(|l| v.push(l));
 
         let get_nbr = |r: &Regex, s: &str| -> Vec<u32> {
             r.find_iter(s)
@@ -55,11 +53,9 @@ impl Day for Two {
         let re_green: Regex = Regex::new(r"[0-9]+ green").unwrap();
         let re_blue: Regex = Regex::new(r"[0-9]+ blue").unwrap();
 
-        let mut content = String::new();
-        AdventOfCode::read_file_to_string(&mut content, testing, "two");
-        let mut v = Vec::new();
+        let content = AdventOfCode::read_file_to_string(testing, "two");
+        let v: Vec<&str> = content.lines().collect();
         let mut r = Vec::new();
-        content.lines().for_each(|l| v.push(l));
 
         let get_nbr = |r: &Regex, s: &str| -> Vec<u32> {
             r.find_iter(s)

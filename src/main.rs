@@ -44,7 +44,7 @@ pub trait Day {
         T: std::str::FromStr + std::fmt::Debug,
         <T as std::str::FromStr>::Err: std::fmt::Debug,
     {
-        unimplemented!()
+        content.lines().map(|l| l.parse::<T>().unwrap()).collect()
     }
 }
 
@@ -225,9 +225,8 @@ impl AdventOfCode {
         absolute_path
     }
 
-    pub fn read_file_to_string(buf: &mut String, testing: bool, day: &str) {
+    pub fn read_file_to_string(testing: bool, day: &str) -> String {
         let path = Self::get_file_path(testing, day);
-        let mut file = File::open(path).expect("Couldn't open input");
-        file.read_to_string(buf).expect("Couldn't read input");
+        std::fs::read_to_string(path).expect("Couldn't read input file")
     }
 }

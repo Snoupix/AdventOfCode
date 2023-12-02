@@ -9,8 +9,7 @@ pub struct Seven;
 impl Day for Seven {
     fn one(testing: bool) -> String {
         let mut result = 0i64;
-        let mut content = String::new();
-        AdventOfCode::read_file_to_string(&mut content, testing, "seven");
+        let mut content = AdventOfCode::read_file_to_string(testing, "seven");
         let commands = compute_file(content);
 
         let mut dir_sizes: HashMap<String, i64> = HashMap::from([(String::from("/"), 0)]);
@@ -144,8 +143,7 @@ impl Day for Seven {
     fn two(testing: bool) -> String {
         let (total, required) = (70000000, 30000000);
         let mut result = 0i64;
-        let mut content = String::new();
-        AdventOfCode::read_file_to_string(&mut content, testing, "seven");
+        let mut content = AdventOfCode::read_file_to_string(testing, "seven");
         let commands = compute_file(content);
 
         let mut dir_sizes: HashMap<String, i64> = HashMap::from([(String::from("/"), 0)]);

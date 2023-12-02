@@ -5,8 +5,7 @@ pub struct Eight;
 impl Day for Eight {
     fn one(testing: bool) -> String {
         let mut result = 0u16;
-        let mut content = String::new();
-        AdventOfCode::read_file_to_string(&mut content, testing, "eight");
+        let mut content = AdventOfCode::read_file_to_string(testing, "eight");
         let map = compute_file(content);
 
         let test_edge_trees: Vec<u8> = "3037322623935390"
@@ -47,8 +46,7 @@ impl Day for Eight {
 
     fn two(testing: bool) -> String {
         let mut result = 0u32;
-        let mut content = String::new();
-        AdventOfCode::read_file_to_string(&mut content, testing, "eight");
+        let mut content = AdventOfCode::read_file_to_string(testing, "eight");
         let map = compute_file(content);
 
         for y in 0..map.len() {

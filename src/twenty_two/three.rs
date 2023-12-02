@@ -25,8 +25,7 @@ impl Day for Three {
             );
         }
 
-        let mut content = String::new();
-        AdventOfCode::read_file_to_string(&mut content, testing, "three");
+        let mut content = AdventOfCode::read_file_to_string(testing, "three");
         let rucksack = compute_file(content);
 
         for items in &rucksack {
@@ -65,8 +64,7 @@ impl Day for Three {
             );
         }
 
-        let mut content = String::new();
-        AdventOfCode::read_file_to_string(&mut content, testing, "three");
+        let mut content = AdventOfCode::read_file_to_string(testing, "three");
         let mut rucksack: Vec<Vec<String>> = Vec::new();
 
         let mut j = 0;
