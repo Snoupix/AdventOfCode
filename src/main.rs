@@ -141,12 +141,12 @@ impl AdventOfCode {
                         enums::SubDay::Two => One::two(self.testing),
                     }
                 }
-                // enums::Day::Two => {
-                //     match self.current_sub_day {
-                //         enums::SubDay::One => Two::one(self.testing),
-                //         enums::SubDay::Two => Two::two(self.testing),
-                //     }
-                // }
+                enums::Day::Two => {
+                    match self.current_sub_day {
+                        enums::SubDay::One => Two::one(self.testing),
+                        enums::SubDay::Two => Two::two(self.testing),
+                    }
+                }
                 // enums::Day::Three => {
                 //     match self.current_sub_day {
                 //         enums::SubDay::One => Three::one(self.testing),
@@ -207,7 +207,7 @@ impl AdventOfCode {
                 //         enums::SubDay::Two => Twelve::two(self.testing),
                 //     }
                 // }
-                _ => String::from(""),
+                day => panic!("Couldn't find Day {day:?}"),
             }
         );
     }
