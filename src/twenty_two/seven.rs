@@ -2,7 +2,7 @@ use std::collections::HashMap;
 
 use regex::Regex;
 
-use crate::class::{AdventOfCode, Day};
+use crate::{AdventOfCode, Day};
 
 pub struct Seven;
 
