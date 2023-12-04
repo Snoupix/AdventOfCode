@@ -1,7 +1,5 @@
 use regex::Regex;
 
-use std::collections::HashSet;
-
 use crate::{AdventOfCode, Day};
 
 pub struct Four;
