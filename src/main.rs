@@ -165,12 +165,12 @@ impl AdventOfCode {
                         enums::SubDay::Two => Five::two(self.testing),
                     }
                 }
-                // enums::Day::Six => {
-                //     match self.current_sub_day {
-                //         enums::SubDay::One => Six::one(self.testing),
-                //         enums::SubDay::Two => Six::two(self.testing),
-                //     }
-                // }
+                enums::Day::Six => {
+                    match self.current_sub_day {
+                        enums::SubDay::One => Six::one(self.testing),
+                        enums::SubDay::Two => Six::two(self.testing),
+                    }
+                }
                 // enums::Day::Seven => {
                 //     match self.current_sub_day {
                 //         enums::SubDay::One => Seven::one(self.testing),

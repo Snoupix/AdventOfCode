@@ -149,9 +149,7 @@ impl Day for Five {
             let n = find_nb_in_hash(&ltot, n);
             let n = find_nb_in_hash(&ttoh, n);
             let n = find_nb_in_hash(&htol, n);
-            if n < r {
-                r = n;
-            }
+            r = u64::min(r, n);
         }
 
         // for s in seeds {
@@ -280,9 +278,7 @@ impl Day for Five {
                 let n = find_nb_in_hash(&ltot, n);
                 let n = find_nb_in_hash(&ttoh, n);
                 let n = find_nb_in_hash(&htol, n);
-                if n < r {
-                    r = n;
-                }
+                r = u64::min(r, n);
             }
         }
 
