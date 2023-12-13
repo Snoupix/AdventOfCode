@@ -1,3 +1,4 @@
+mod eight;
 mod five;
 mod four;
 mod one;
@@ -6,6 +7,7 @@ mod six;
 mod three;
 mod two;
 
+pub use eight::Eight;
 pub use five::Five;
 pub use four::Four;
 pub use one::One;
