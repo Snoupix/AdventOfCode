@@ -1,17 +1,21 @@
 mod eight;
 mod five;
 mod four;
+mod nine;
 mod one;
 mod seven;
 mod six;
+mod ten;
 mod three;
 mod two;
 
 pub use eight::Eight;
 pub use five::Five;
 pub use four::Four;
+pub use nine::Nine;
 pub use one::One;
 pub use seven::Seven;
 pub use six::Six;
+pub use ten::Ten;
 pub use three::Three;
 pub use two::Two;
