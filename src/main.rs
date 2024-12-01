@@ -3,12 +3,14 @@
 
 mod enums;
 
-mod twenty_three;
-mod twenty_two;
+mod twenty_four;
+// mod twenty_three;
+// mod twenty_two;
 
 use std::{fs::File, io::Read, vec};
 
-use crate::twenty_three::*;
+// TODO Yearly: Change the year on get_file_path fn
+use crate::twenty_four::*;
 
 use clap::Parser;
 
@@ -31,11 +33,13 @@ pub struct AdventOfCode {
 }
 
 pub trait Day {
-    fn one(testing: bool) -> String {
+    type Output: std::fmt::Display;
+
+    fn one(testing: bool) -> Self::Output {
         unimplemented!()
     }
 
-    fn two(testing: bool) -> String {
+    fn two(testing: bool) -> Self::Output {
         unimplemented!()
     }
 
@@ -141,7 +145,7 @@ impl AdventOfCode {
                         enums::SubDay::Two => One::two(self.testing),
                     }
                 }
-                enums::Day::Two => {
+                /*enums::Day::Two => {
                     match self.current_sub_day {
                         enums::SubDay::One => Two::one(self.testing),
                         enums::SubDay::Two => Two::two(self.testing),
@@ -189,32 +193,36 @@ impl AdventOfCode {
                         enums::SubDay::Two => Nine::two(self.testing),
                     }
                 }
-                // enums::Day::Ten => {
-                //     match self.current_sub_day {
-                //         enums::SubDay::One => Ten::one(self.testing),
-                //         enums::SubDay::Two => Ten::two(self.testing),
-                //     }
-                // }
-                // enums::Day::Eleven => {
-                //     match self.current_sub_day {
-                //         enums::SubDay::One => Eleven::one(self.testing),
-                //         enums::SubDay::Two => Eleven::two(self.testing),
-                //     }
-                // }
-                // enums::Day::Twelve => {
-                //     match self.current_sub_day {
-                //         enums::SubDay::One => Twelve::one(self.testing),
-                //         enums::SubDay::Two => Twelve::two(self.testing),
-                //     }
-                // }
+                enums::Day::Ten => {
+                    match self.current_sub_day {
+                        enums::SubDay::One => Ten::one(self.testing),
+                        enums::SubDay::Two => Ten::two(self.testing),
+                    }
+                }
+                enums::Day::Eleven => {
+                    match self.current_sub_day {
+                        enums::SubDay::One => Eleven::one(self.testing),
+                        enums::SubDay::Two => Eleven::two(self.testing),
+                    }
+                }
+                enums::Day::Twelve => {
+                    match self.current_sub_day {
+                        enums::SubDay::One => Twelve::one(self.testing),
+                        enums::SubDay::Two => Twelve::two(self.testing),
+                    }
+                } */
                 day => panic!("Couldn't find Day {day:?}"),
             }
         );
     }
 
     fn get_file_path(testing: bool, day: &str) -> String {
-        let mut absolute_path =
-            String::from(concat!(env!("CARGO_MANIFEST_DIR"), "/src/input/", "2023/"));
+        let mut absolute_path = String::from(concat!(
+            env!("CARGO_MANIFEST_DIR"),
+            "/src/input/",
+            "2024",
+            "/"
+        ));
 
         if testing {
             absolute_path.push_str("example.txt");
