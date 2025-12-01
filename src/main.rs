@@ -3,14 +3,12 @@
 
 mod enums;
 
-mod twenty_four;
-// mod twenty_three;
-// mod twenty_two;
+mod twenty_five;
 
 use std::{fs::File, io::Read, vec};
 
 // TODO Yearly: Change the year on get_file_path fn
-use crate::twenty_four::*;
+use crate::twenty_five::*;
 
 use clap::Parser;
 
