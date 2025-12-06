@@ -218,7 +218,7 @@ impl AdventOfCode {
         let mut absolute_path = String::from(concat!(
             env!("CARGO_MANIFEST_DIR"),
             "/src/input/",
-            "2024",
+            "2025",
             "/"
         ));
 

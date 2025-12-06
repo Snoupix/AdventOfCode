@@ -6,6 +6,7 @@
 @incr_year sc_year year:
     sed -i "s#mod twenty.*#mod {{ sc_year }};#" src/main.rs
     sed -i "s#\(use crate::\)twenty_\w*\(.*\)#\1{{ sc_year }}\2#" src/main.rs
+    sed -i -E "s/\"2[0-9]{3}\"/\"{{ year }}\"/" src/main.rs
     mkdir src/input/{{ year }}
     touch src/input/{{ year }}/example.txt
     touch src/input/{{ year }}/input_one.txt
