@@ -134,84 +134,89 @@ impl AdventOfCode {
     }
 
     pub fn run(self) {
-        println!(
-            "Result: {}",
-            match self.current_day {
-                enums::Day::One => {
+        print!("Result: ");
+
+        match self.current_day {
+            enums::Day::One => {
+                println!(
+                    "{}",
                     match self.current_sub_day {
                         enums::SubDay::One => One::one(self.testing),
                         enums::SubDay::Two => One::two(self.testing),
                     }
-                }
-                /*enums::Day::Two => {
+                );
+            }
+            enums::Day::Two => {
+                println!(
+                    "{}",
                     match self.current_sub_day {
                         enums::SubDay::One => Two::one(self.testing),
                         enums::SubDay::Two => Two::two(self.testing),
                     }
-                }
-                enums::Day::Three => {
-                    match self.current_sub_day {
-                        enums::SubDay::One => Three::one(self.testing),
-                        enums::SubDay::Two => Three::two(self.testing),
-                    }
-                }
-                enums::Day::Four => {
-                    match self.current_sub_day {
-                        enums::SubDay::One => Four::one(self.testing),
-                        enums::SubDay::Two => Four::two(self.testing),
-                    }
-                }
-                enums::Day::Five => {
-                    match self.current_sub_day {
-                        enums::SubDay::One => Five::one(self.testing),
-                        enums::SubDay::Two => Five::two(self.testing),
-                    }
-                }
-                enums::Day::Six => {
-                    match self.current_sub_day {
-                        enums::SubDay::One => Six::one(self.testing),
-                        enums::SubDay::Two => Six::two(self.testing),
-                    }
-                }
-                enums::Day::Seven => {
-                    match self.current_sub_day {
-                        enums::SubDay::One => Seven::one(self.testing),
-                        enums::SubDay::Two => Seven::two(self.testing),
-                    }
-                }
-                enums::Day::Eight => {
-                    match self.current_sub_day {
-                        enums::SubDay::One => Eight::one(self.testing),
-                        enums::SubDay::Two => Eight::two(self.testing),
-                    }
-                }
-                enums::Day::Nine => {
-                    match self.current_sub_day {
-                        enums::SubDay::One => Nine::one(self.testing),
-                        enums::SubDay::Two => Nine::two(self.testing),
-                    }
-                }
-                enums::Day::Ten => {
-                    match self.current_sub_day {
-                        enums::SubDay::One => Ten::one(self.testing),
-                        enums::SubDay::Two => Ten::two(self.testing),
-                    }
-                }
-                enums::Day::Eleven => {
-                    match self.current_sub_day {
-                        enums::SubDay::One => Eleven::one(self.testing),
-                        enums::SubDay::Two => Eleven::two(self.testing),
-                    }
-                }
-                enums::Day::Twelve => {
-                    match self.current_sub_day {
-                        enums::SubDay::One => Twelve::one(self.testing),
-                        enums::SubDay::Two => Twelve::two(self.testing),
-                    }
-                } */
-                day => panic!("Couldn't find Day {day:?}"),
+                );
             }
-        );
+            /*enums::Day::Three => {
+                println!("{}", match self.current_sub_day {
+                    enums::SubDay::One => Three::one(self.testing),
+                    enums::SubDay::Two => Three::two(self.testing),
+                });
+            }
+            enums::Day::Four => {
+                println!("{}", match self.current_sub_day {
+                    enums::SubDay::One => Four::one(self.testing),
+                    enums::SubDay::Two => Four::two(self.testing),
+                });
+            }
+            enums::Day::Five => {
+                println!("{}", match self.current_sub_day {
+                    enums::SubDay::One => Five::one(self.testing),
+                    enums::SubDay::Two => Five::two(self.testing),
+                });
+            }
+            enums::Day::Six => {
+                println!("{}", match self.current_sub_day {
+                    enums::SubDay::One => Six::one(self.testing),
+                    enums::SubDay::Two => Six::two(self.testing),
+                });
+            }
+            enums::Day::Seven => {
+                println!("{}", match self.current_sub_day {
+                    enums::SubDay::One => Seven::one(self.testing),
+                    enums::SubDay::Two => Seven::two(self.testing),
+                });
+            }
+            enums::Day::Eight => {
+                println!("{}", match self.current_sub_day {
+                    enums::SubDay::One => Eight::one(self.testing),
+                    enums::SubDay::Two => Eight::two(self.testing),
+                });
+            }
+            enums::Day::Nine => {
+                println!("{}", match self.current_sub_day {
+                    enums::SubDay::One => Nine::one(self.testing),
+                    enums::SubDay::Two => Nine::two(self.testing),
+                });
+            }
+            enums::Day::Ten => {
+                println!("{}", match self.current_sub_day {
+                    enums::SubDay::One => Ten::one(self.testing),
+                    enums::SubDay::Two => Ten::two(self.testing),
+                });
+            }
+            enums::Day::Eleven => {
+                println!("{}", match self.current_sub_day {
+                    enums::SubDay::One => Eleven::one(self.testing),
+                    enums::SubDay::Two => Eleven::two(self.testing),
+                });
+            }
+            enums::Day::Twelve => {
+                println!("{}", match self.current_sub_day {
+                    enums::SubDay::One => Twelve::one(self.testing),
+                    enums::SubDay::Two => Twelve::two(self.testing),
+                });
+            } */
+            day => panic!("Couldn't find Day {day:?}"),
+        }
     }
 
     fn get_file_path(testing: bool, day: &str) -> String {

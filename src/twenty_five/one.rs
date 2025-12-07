@@ -3,7 +3,7 @@ use crate::{AdventOfCode, Day};
 pub struct One;
 
 impl Day for One {
-    type Output = i32;
+    type Output = i64;
 
     fn one(testing: bool) -> Self::Output {
         let content = AdventOfCode::read_file_to_string(testing, "one");
@@ -42,7 +42,7 @@ impl Day for One {
     fn two(testing: bool) -> Self::Output {
         let content = AdventOfCode::read_file_to_string(testing, "one");
         let mut lines = content.lines();
-        let mut zeros: i32 = 0;
+        let mut zeros: Self::Output = 0;
         let mut curr: Self::Output = 50;
 
         for i in 0..lines.clone().count() {
