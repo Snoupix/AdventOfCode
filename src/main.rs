@@ -134,8 +134,6 @@ impl AdventOfCode {
     }
 
     pub fn run(self) {
-        print!("Result: ");
-
         match self.current_day {
             enums::Day::One => {
                 println!(
@@ -164,13 +162,16 @@ impl AdventOfCode {
                     }
                 );
             }
-            /*enums::Day::Four => {
-                println!("{}", match self.current_sub_day {
-                    enums::SubDay::One => Four::one(self.testing),
-                    enums::SubDay::Two => Four::two(self.testing),
-                });
+            enums::Day::Four => {
+                println!(
+                    "{}",
+                    match self.current_sub_day {
+                        enums::SubDay::One => Four::one(self.testing),
+                        enums::SubDay::Two => Four::two(self.testing),
+                    }
+                );
             }
-            enums::Day::Five => {
+            /*enums::Day::Five => {
                 println!("{}", match self.current_sub_day {
                     enums::SubDay::One => Five::one(self.testing),
                     enums::SubDay::Two => Five::two(self.testing),
